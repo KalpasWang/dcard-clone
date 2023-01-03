@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   Image,
   Input,
@@ -15,19 +16,17 @@ type Props = {};
 
 function Navbar({}: Props) {
   return (
-    <Flex bg='brand.blue' color='white' px='1.25rem' justify='space-between'>
+    <Flex bg='brand.300' color='white' px='1.25rem' justify='space-between'>
       <Flex px='1rem'>
         {/* Logo */}
         <Link as={NextLink} href='/' display='inline-block' py='10px'>
-          <Image src='/logo.svg' alt={process.env.APP_NAME} height='1.75rem' />
+          <Image src='/logo.svg' height='1.75rem' alt={process.env.APP_NAME} />
         </Link>
         {/* Search */}
         <InputGroup h='100%' px='2rem'>
           <Input
             placeholder={`搜尋 ${process.env.APP_NAME}`}
-            bg='blue.700'
-            fontSize='0.75rem'
-            py='10px'
+            bg='brand.400'
             my='auto'
             minW='50vw'
             border='none'
@@ -37,8 +36,10 @@ function Navbar({}: Props) {
               outline: 'none',
             }}
           />
-          <InputRightElement pointerEvents='none' color='white'>
-            <SearchIcon mb={2} />
+          <InputRightElement h='100%' my='auto'>
+            <Button variant='input'>
+              <SearchIcon my='auto' />
+            </Button>
           </InputRightElement>
         </InputGroup>
       </Flex>
